@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static('public'));   //This is to serve static files, such as the CSS
 app.use(bodyParser.urlencoded({extended:true})); //This is to be able to read the input of post request forms
 
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){      //process.env.PORT is a dynamic port that heroku will choose
   console.log("Server is runing on port 3000");
 })
 
